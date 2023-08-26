@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_practice.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:11:24 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/08/26 11:16:26 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/08/26 19:48:14 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,85 +36,85 @@
 // 	printf("%ld %06d\n", tv->tv_sec, tv->tv_usec);
 // 	return (0);
 // }
-pthread_mutex_t mux = PTHREAD_MUTEX_INITIALIZER;
+// pthread_mutex_t mux = PTHREAD_MUTEX_INITIALIZER;
 
-// void *thread_func(void *arg)
-// {
-// 	int id;
-// 	int i;
-// 	struct timeval tv;
+void *thread_func(void *arg)
+{
+	int id;
+	int i;
+	struct timeval tv;
 	
 
-// 	id = (int)arg;
+	id = (int)arg;
+	i = 0;
+	while (i < 5)
+	{
+		gettimeofday(&tv, NULL);
+		printf("%06d : id = %d, i = %d\n", tv.tv_usec, id , i);
+		sleep(1);
+		i++;
+	}
+	return "finished!";
+}
+
+// void some_func(void *arg)
+// {
+// 	int i;
+
 // 	i = 0;
-// 	while (i < 5)
+// 	if (pthread_mutex_lock(&mux) != 0)
 // 	{
-// 		gettimeofday(&tv, NULL);
-// 		printf("%06d : id = %d, i = %d\n", tv.tv_usec, id , i);
-// 		sleep(1);
-// 		i++;
+// 		perror("pthread_mutex_lock");
+// 		exit(-1);
 // 	}
-// 	return "finished!";
+// 	while (i++ < 5)
+// 		printf("i = %i\n", i);
+// 	if (pthread_mutex_unlock(&mux) != 0)
+// 	{
+// 		perror("pthread_mutex_unlock");
+// 		exit(-1);
+// 	}
+// 	return ;
 // }
 
-void some_func(void *arg)
-{
-	int i;
+// int main(int argc, char **argv)
+// {
+// 	pthread_t th1;
+// 	pthread_t th2;
 
-	i = 0;
-	if (pthread_mutex_lock(&mux) != 0)
-	{
-		perror("pthread_mutex_lock");
-		exit(-1);
-	}
-	while (i++ < 5)
-		printf("i = %i\n", i);
-	if (pthread_mutex_unlock(&mux) != 0)
-	{
-		perror("pthread_mutex_unlock");
-		exit(-1);
-	}
-	return ;
-}
+// 	// スレッドの生成
+// 	if (pthread_create(&th1, NULL, some_func, NULL) != 0)
+// 	{
+// 		perror("pthread_create");
+// 		return (-1);
+// 	}
+// 	if (pthread_create(&th2, NULL, some_func, NULL) != 0)
+// 	{
+// 		perror("pthread_create");
+// 		return (-1);
+// 	}
 
-int main(int argc, char **argv)
-{
-	pthread_t th1;
-	pthread_t th2;
+// 	// スレッドの待機
+// 	if (pthread_join(th1, NULL) != 0)
+// 	{
+// 		perror("pthread_join");
+// 		return (-1);
+// 	}
+// 	if (pthread_join(th2, NULL) != 0)
+// 	{
+// 		perror("pthread_join");
+// 		return (-1);
+// 	}
 
-	// スレッドの生成
-	if (pthread_create(&th1, NULL, some_func, NULL) != 0)
-	{
-		perror("pthread_create");
-		return (-1);
-	}
-	if (pthread_create(&th2, NULL, some_func, NULL) != 0)
-	{
-		perror("pthread_create");
-		return (-1);
-	}
-
-	// スレッドの待機
-	if (pthread_join(th1, NULL) != 0)
-	{
-		perror("pthread_join");
-		return (-1);
-	}
-	if (pthread_join(th2, NULL) != 0)
-	{
-		perror("pthread_join");
-		return (-1);
-	}
-
-	// ミューテックスオブジェクトの解放
-	if (pthread_mutex_destroy(&mux) != 0)
-	{
-		perror("pthread_mutex_destroy");
-		return (-1);
-	}
-	return (0);
+// 	// ミューテックスオブジェクトの解放
+// 	if (pthread_mutex_destroy(&mux) != 0)
+// 	{
+// 		perror("pthread_mutex_destroy");
+// 		return (-1);
+// 	}
+// 	return (0);
 	
-}
+// }
 
 // int main(int argc, char **argv)
 // {
@@ -145,33 +145,33 @@ int main(int argc, char **argv)
 // 	return (0);
 // }
 
-// int main(int argc, char **argv)
-// {
-// 	pthread_t v[NUM_THREADS];
-// 	int i;
-// 	char *ptr;
+int main(int argc, char **argv)
+{
+	pthread_t v[NUM_THREADS];
+	int i;
+	char *ptr;
 	
-// 	i = 0;
-// 	while (i < NUM_THREADS)
-// 	{
-// 		if (pthread_create(&v[i], NULL, thread_func, (void *)i) != 0)
-// 		{
-// 			perror("pthread_create");
-// 			return (-1);
-// 		}
-// 		i++;
-// 	}
-// 	i = 0;
-// 	while (i < NUM_THREADS)
-// 	{
-// 		if (pthread_join(v[i], (void **)&ptr) == 0)
-// 			printf("msg = %s\n", ptr);
-// 		else 
-// 		{
-// 			perror("pthread_create");
-// 			return (-1);
-// 		}
-// 		i++;
-// 	}
-// 	return (0);
-// }
+	i = 0;
+	while (i < NUM_THREADS)
+	{
+		if (pthread_create(&v[i], NULL, thread_func, (void *)i) != 0)
+		{
+			perror("pthread_create");
+			return (-1);
+		}
+		i++;
+	}
+	i = 0;
+	while (i < NUM_THREADS)
+	{
+		if (pthread_join(v[i], (void **)&ptr) == 0)
+			printf("msg = %s\n", ptr);
+		else 
+		{
+			perror("pthread_create");
+			return (-1);
+		}
+		i++;
+	}
+	return (0);
+}

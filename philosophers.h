@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:12:01 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/08/23 10:21:23 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/08/26 20:58:15 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,26 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <limits.h>
 # include <stdio.h>
 # include <pthread.h>
-#  define NUM_THREADS 10
-#   define TIMEVAL_TO_TIMESPEC(tv, ts) { \
-		(ts)->tv_sec = (tv)->tv_sec; \
-		(ts)->tv_nsec = (tv)->tv_usec * 1000; \
-}
-
+# define NUM_THREADS 10
 
 typedef struct s_timeval
 {
-	time_t tv_sec;
-	suseconds_t tv_usec;
+	time_t		tv_sec;
+	suseconds_t	tv_usec;
 }			t_timeval;
 
 typedef struct s_philo
 {
-	int	Number_of_philosophers;
-	int	Time_to_die;
-	int	Time_to_eat;
-	int	Time_to_sleep;
-	int	Num_of_times_each_philo_must_eat;
+	int	num_philo;
+	int	time_to_die;
+	int	time_to_eat;
+	int	time_to_sleep;
+	int	least_time_to_eat;
 }				t_philo;
 
+int							ft_atoi(const char *str);
 
 #endif
