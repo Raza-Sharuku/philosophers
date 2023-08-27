@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 15:30:17 by sraza             #+#    #+#             */
-/*   Updated: 2023/08/27 16:12:59 by sraza            ###   ########.fr       */
+/*   Updated: 2023/08/27 16:18:34 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,14 @@ t_philo	*make_philo(t_info *info)
 	{
 		new = ft_newphilo(i);
 		tmp->next = new;
+		new->prev = tmp;
 		tmp = tmp->next;
 		i++;
 	}
 	new = ft_newphilo(i);
 	tmp->next = new;
+	new->prev = tmp;
 	tmp->next->next = first;
+	first->prev = new;
 	return (first);
 }

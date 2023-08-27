@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/08/27 15:37:11 by sraza            ###   ########.fr       */
+/*   Updated: 2023/08/27 16:24:11 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,34 @@ t_info	*set_philo_value(char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_info	*info;
-	t_philo	*philo;
-	pthread_t *p;
+	t_info		*info;
+	t_philo		*philo;
+	pthread_t	*p;
+	int			i;
 
+	i = 0;
 	if (argc != 5 && argc != 6)
 		return (argc_error());
 	info = set_philo_value(argv);
 	if (info == NULL)
 		return (1);
 	philo = make_philo(info);
-	
+	p = (pthread_t)malloc(sizoeof(pthread_t) * info->num_philo);
+	while (i < info->num_philo)
+	{
+		if (pthread_create(p[i], NULL, &philo, philo) != 0)
+			return (-1);
+		philo = philo->next;
+		i++;
+	}
+	i = 0;
+	while (i < info->num_philo)
+	{
+		if (pthread_join(p[i], NULL) != 0)
+			return (-1);
+		philo = philo->next;
+		i++;
+	}	
 	return (0);
 }
 
