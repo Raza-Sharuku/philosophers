@@ -6,7 +6,7 @@
 #    By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/26 20:33:01 by sraza             #+#    #+#              #
-#    Updated: 2023/08/26 20:44:09 by sraza            ###   ########.fr        #
+#    Updated: 2023/08/27 15:31:18 by sraza            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,9 @@ NAME	=	philo
 CC = cc
 CFLAGS	=	-Wall -Wextra -Werror
 
-SRCS	=	philo.c \
-			ft_atoi.c
+SRCS	=	main.c \
+			ft_atoi.c \
+			make_philo_list.c
 
 OBJS = ${SRCS:%.c=%.o}
 

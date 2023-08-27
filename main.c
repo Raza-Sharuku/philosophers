@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/08/26 21:01:25 by sraza            ###   ########.fr       */
+/*   Updated: 2023/08/27 15:37:11 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,35 +19,37 @@ int	argc_error(void)
 	return (1);
 }
 
-t_philo	*set_philo_value(char **argv)
+t_info	*set_philo_value(char **argv)
 {
-	t_philo	*philo;
+	t_info	*info;
 
-	philo = (t_philo *)malloc(sizeof(t_philo) * (ft_atoi(argv[1]) + 1));
-	if (philo == NULL)
+	info = (t_info *)malloc(sizeof(t_info) * 1);
+	if (info == NULL)
 		return (NULL);
-	philo->num_philo = ft_atoi(argv[1]);
-	philo->time_to_die = ft_atoi(argv[2]);
-	philo->time_to_eat = ft_atoi(argv[3]);
-	philo->time_to_sleep = ft_atoi(argv[4]);
+	info->num_philo = ft_atoi(argv[1]);
+	info->time_to_die = ft_atoi(argv[2]);
+	info->time_to_eat = ft_atoi(argv[3]);
+	info->time_to_sleep = ft_atoi(argv[4]);
 	if (argv[5])
-		philo->least_time_to_eat = ft_atoi(argv[5]);
-	if (philo->num_philo == 0 || philo->time_to_die == 0
-		|| philo->time_to_eat == 0 || philo->time_to_sleep == 0)
-	{
-		free(philo);
-		return (NULL);
-	}
-	return (philo);
+		info->least_time_to_eat = ft_atoi(argv[5]);
+	else 
+		info->least_time_to_eat = INT_MAX;
+	return (info);
 }
 
 int	main(int argc, char **argv)
 {
+	t_info	*info;
 	t_philo	*philo;
+	pthread_t *p;
 
 	if (argc != 5 && argc != 6)
 		return (argc_error());
-	philo = set_philo_value(argv);
+	info = set_philo_value(argv);
+	if (info == NULL)
+		return (1);
+	philo = make_philo(info);
+	
 	return (0);
 }
 
