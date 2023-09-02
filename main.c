@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/08/27 16:24:11 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/02 20:20:46 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,20 @@ int	argc_error(void)
 	return (1);
 }
 
-t_info	*set_philo_value(char **argv)
+void	creating_threads(t_info *info)
 {
-	t_info	*info;
+	int		i;
+	t_philo	*tmp;
 
-	info = (t_info *)malloc(sizeof(t_info) * 1);
-	if (info == NULL)
-		return (NULL);
-	info->num_philo = ft_atoi(argv[1]);
-	info->time_to_die = ft_atoi(argv[2]);
-	info->time_to_eat = ft_atoi(argv[3]);
-	info->time_to_sleep = ft_atoi(argv[4]);
-	if (argv[5])
-		info->least_time_to_eat = ft_atoi(argv[5]);
-	else 
-		info->least_time_to_eat = INT_MAX;
-	return (info);
+	i = 0;
+	tmp = info->philo;
+	while (i < info->num_philo)
+	{
+		pthread_create(&tmp->thread, NULL, &routine, tmp);
+		tmp = tmp->next;
+		i++;
+	}
+	pthread_create(&info->moniter, NULL, &monitering_routine, info);
 }
 
 int	main(int argc, char **argv)
@@ -50,15 +48,8 @@ int	main(int argc, char **argv)
 	info = set_philo_value(argv);
 	if (info == NULL)
 		return (1);
-	philo = make_philo(info);
-	p = (pthread_t)malloc(sizoeof(pthread_t) * info->num_philo);
-	while (i < info->num_philo)
-	{
-		if (pthread_create(p[i], NULL, &philo, philo) != 0)
-			return (-1);
-		philo = philo->next;
-		i++;
-	}
+	info->philo = make_philo(info);
+	creating_threads(info);
 	i = 0;
 	while (i < info->num_philo)
 	{

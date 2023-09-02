@@ -6,7 +6,7 @@
 #    By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/26 20:33:01 by sraza             #+#    #+#              #
-#    Updated: 2023/08/27 15:31:18 by sraza            ###   ########.fr        #
+#    Updated: 2023/09/02 20:04:32 by sraza            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 SRCS	=	main.c \
 			ft_atoi.c \
-			make_philo_list.c
+			make_philo_list.c \
+			initialize.c \
+			x
 
 OBJS = ${SRCS:%.c=%.o}
 
