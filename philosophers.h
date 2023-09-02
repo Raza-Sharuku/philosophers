@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:12:01 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/02 20:31:27 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/02 20:48:31 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_info
 typedef struct s_philo
 {
 	t_info			*info;
-	pthread_t		thread;
+	pthread_t		*thread;
 	int				id;
 	pthread_mutex_t	my_fork;
 	pthread_mutex_t	*side_fork;

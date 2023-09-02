@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/02 20:20:46 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/02 20:49:31 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@ int	argc_error(void)
 	printf("USAGE: ./philo Number_of_philosophers Time_to_die Time_to_eat \
 	Time_to_sleep [ Number_of_times_each_philosopher_must_eat ] \n");
 	return (1);
+}
+
+void	monitering_routine(void *p)
+{
+	p = NULL;
+
+	return;
 }
 
 void	creating_threads(t_info *info)
