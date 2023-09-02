@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/08/27 16:24:11 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/02 13:58:18 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 	if (info == NULL)
 		return (1);
 	philo = make_philo(info);
-	p = (pthread_t)malloc(sizoeof(pthread_t) * info->num_philo);
+	p = (pthread_t)malloc(sizoeof() * info->num_philo);
 	while (i < info->num_philo)
 	{
 		if (pthread_create(p[i], NULL, &philo, philo) != 0)

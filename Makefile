@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+         #
+#    By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/26 20:33:01 by sraza             #+#    #+#              #
-#    Updated: 2023/08/27 15:31:18 by sraza            ###   ########.fr        #
+#    Updated: 2023/08/30 21:43:40 by razasharuku      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	philo
 CC = cc
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-pthread -Wall -Wextra -Werror
 
 SRCS	=	main.c \
 			ft_atoi.c \
