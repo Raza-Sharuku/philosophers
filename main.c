@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/05 12:59:13 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/05 18:13:22 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,52 +19,32 @@ int	argc_error(void)
 	return (1);
 }
 
-void	monitering_routine(void *p)
-{
-	p = NULL;
-
-	return;
-}
-
-void	creating_threads(t_info *info)
-{
-	int		i;
-	t_philo	*tmp;
-
-	i = 0;
-	tmp = info->philo;
-	while (i < info->num_philo)
-	{
-		pthread_create(&tmp->thread, NULL, &routine, tmp);
-		tmp = tmp->next;
-		i++;
-	}
-	pthread_create(&info->moniter, NULL, &monitering_routine, info);
-}
-
 int	main(int argc, char **argv)
 {
 	t_info		*info;
 	t_philo		*philo;
-	pthread_t	*p;
 	int			i;
 
 	i = 0;
+	philo = NULL;
 	if (argc != 5 && argc != 6)
 		return (argc_error());
 	info = set_philo_value(argv);
 	if (info == NULL)
 		return (1);
 	info->philo = make_philo(info);
-	creating_threads(info);
+	info = creating_threads(info);
 	i = 0;
+	printf("philo.num = %i\n", philo->id);
 	while (i < info->num_philo)
 	{
-		if (pthread_join(p[i], NULL) != 0)
+		if (pthread_join(philo->thread, NULL) != 0)
 			return (-1);
+		printf("tmp->id %i, i = %i\n", philo->id, i);
 		philo = philo->next;
 		i++;
-	}	
+	}
+	// free_circle_list(info, philo);
 	return (0);
 }
 

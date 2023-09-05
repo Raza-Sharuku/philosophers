@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 19:59:18 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/02 20:15:16 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/05 17:59:15 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ t_info	*set_philo_value(char **argv)
 	else 
 		info->least_time_to_eat = INT_MAX;
 	info->start_time = get_now_time();
-	info->stop_flag = ATOMIC_VAR_INIT(0);
+	info->stop_flag =0;
+	// info->stop_flag = ATOMIC_VAR_INIT(0);
 	return (info);
 }
 
@@ -56,7 +57,7 @@ void	get_side_fork(t_info *info)
 	i = 0;
 	tmp = info->philo;
 	while (i < info->num_philo)
-	{
+	{ 
 		tmp->side_fork = &tmp->next->my_fork;
 		tmp = tmp->next;
 		i++;
