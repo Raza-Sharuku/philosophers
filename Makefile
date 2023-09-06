@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+         #
+#    By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/26 20:33:01 by sraza             #+#    #+#              #
-#    Updated: 2023/09/05 18:00:29 by sraza            ###   ########.fr        #
+#    Updated: 2023/09/06 14:23:24 by razasharuku      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS	=	main.c \
 			conditions.c \
 			free.c \
 			routine.c \
+			print_condition.c \
 
 OBJS = ${SRCS:%.c=%.o}
 

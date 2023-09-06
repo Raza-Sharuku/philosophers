@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 19:59:18 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/05 17:59:15 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/06 15:00:04 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ t_info	*set_philo_value(char **argv)
 	else 
 		info->least_time_to_eat = INT_MAX;
 	info->start_time = get_now_time();
-	info->stop_flag =0;
-	// info->stop_flag = ATOMIC_VAR_INIT(0);
+	info->stop_flag = 0;
 	return (info);
 }
 

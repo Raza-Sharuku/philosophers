@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_philo_list.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 15:30:17 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/05 17:49:38 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/06 11:31:15 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,31 @@ t_philo *ft_newphilo(int num, t_info *info)
 	new->info = info;
 	new->next = NULL;
 	return (new);
+}
+
+t_philo	*print_philo(t_philo *philo)
+{
+	t_philo *first;
+	int i;
+
+	first = philo;
+	i = 0;
+	printf("start of philo->next\n");
+	while (i < philo->info->num_philo)
+	{
+		printf("philo->id = %d\n", philo->id);
+		philo = philo->next;
+		i++;
+	}
+	printf("start of philo->prev\n");
+	i = 0;
+	while (i < philo->info->num_philo)
+	{
+		printf("philo->id = %d\n", philo->id);
+		philo = philo->prev;
+		i++;
+	}
+	return (first);
 }
 
 t_philo	*make_philo(t_info *info)
@@ -53,5 +78,6 @@ t_philo	*make_philo(t_info *info)
 	first->prev = new;
 	info->philo = first;
 	get_side_fork(info);
+	// first = print_philo(first);
 	return (first);
 }

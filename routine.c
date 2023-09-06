@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 20:21:12 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/05 18:04:02 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/06 14:58:17 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,28 @@
 int	eating(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->my_fork);
-	printf("%ld %i has taken a fork\n", get_time(philo->info->start_time), philo->id);
+	print_condition(philo, TAKE_FORK);
 	pthread_mutex_lock(philo->side_fork);
-	printf("%ld %i has taken a fork\n", get_time(philo->info->start_time), philo->id);
-	printf("%ld %i is eating\n", get_time(philo->info->start_time), philo->id);
+	print_condition(philo, TAKE_FORK);
+	print_condition(philo, EATING);
 	usleep(philo->info->time_to_eat);
 	pthread_mutex_unlock(&philo->my_fork);
 	pthread_mutex_unlock(philo->side_fork);
 	return (0);
 }
 
+int	thinking(t_philo *philo)
+{
+	// long long	now;
+
+	print_condition(philo, THINKING);
+	
+	return (0);
+}
+
 int	sleeping(t_philo *philo)
 {
-	printf("%ld %i is sleeping\n", get_time(philo->info->start_time), philo->id);
+	print_condition(philo, SLEEPING);
 	usleep(philo->info->time_to_sleep);
 	return (1);
 }

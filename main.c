@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/05 18:13:22 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/06 11:28:55 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,18 @@ int	main(int argc, char **argv)
 	t_philo		*philo;
 	int			i;
 
-	i = 0;
-	philo = NULL;
 	if (argc != 5 && argc != 6)
 		return (argc_error());
 	info = set_philo_value(argv);
 	if (info == NULL)
 		return (1);
-	info->philo = make_philo(info);
-	info = creating_threads(info);
+	philo = make_philo(info);
+	philo = creating_threads(philo);
 	i = 0;
-	printf("philo.num = %i\n", philo->id);
 	while (i < info->num_philo)
 	{
 		if (pthread_join(philo->thread, NULL) != 0)
 			return (-1);
-		printf("tmp->id %i, i = %i\n", philo->id, i);
 		philo = philo->next;
 		i++;
 	}

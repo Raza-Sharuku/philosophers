@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:12:01 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/05 18:10:27 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/06 13:50:10 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,15 @@ typedef struct s_philo
 
 }				t_philo;
 
+typedef enum e_philo_condition 
+{
+	TAKE_FORK,
+	EATING,
+	SLEEPING,
+	THINKING,
+	DIE,
+}	t_philo_condition;
+
 int							ft_atoi(const char *str);
 t_philo						*make_philo(t_info *info);
 long						get_time(long start_time);
@@ -64,7 +73,7 @@ t_info						*set_philo_value(char **argv);
 void						get_side_fork(t_info *info);
 void						*routine(void *p);
 void						*free_circle_list(t_info *info, t_philo *philo);
-t_info						*creating_threads(t_info *info);
-
+t_philo						*creating_threads(t_philo *philo);
+void						print_condition(t_philo *philo, t_philo_condition cond);
 
 #endif
