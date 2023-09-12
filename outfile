@@ -1,0 +1,284 @@
+get_time time = 1694516277635, start_time = 1694516277635
+0 1 has taken a fork
+get_time time = 1694516277635, start_time = 1694516277635
+0 1 has taken a fork
+get_time time = 1694516277635, start_time = 1694516277635
+0 1 is eating
+get_time time = 1694516277636, start_time = 1694516277635
+1 1 is sleeping
+get_time time = 1694516277636, start_time = 1694516277635
+1 2 is sleeping
+get_time time = 1694516277636, start_time = 1694516277635
+1 1 is thinking
+get_time time = 1694516277636, start_time = 1694516277635
+1 1 has taken a fork
+get_time time = 1694516277636, start_time = 1694516277635
+1 1 has taken a fork
+get_time time = 1694516277636, start_time = 1694516277635
+1 1 is eating
+get_time time = 1694516277636, start_time = 1694516277635
+1 2 has taken a fork
+get_time time = 1694516277636, start_time = 1694516277635
+1 2 has taken a fork
+get_time time = 1694516277636, start_time = 1694516277635
+1 2 is eating
+get_time time = 1694516277636, start_time = 1694516277635
+1 1 is sleeping
+get_time time = 1694516277637, start_time = 1694516277635
+get_time time = 1694516277637, start_time = 1694516277635
+get_time time = 1694516277637, start_time = 1694516277635
+2 1 is thinking
+get_time time = 1694516277637, start_time = 1694516277635
+2 1 has taken a fork
+2 3 has taken a fork
+2 2 is sleeping
+get_time time = 1694516277637, start_time = 1694516277635
+2 3 has taken a fork
+get_time time = 1694516277637, start_time = 1694516277635
+2 3 is eating
+get_time time = 1694516277637, start_time = 1694516277635
+2 1 has taken a fork
+get_time time = 1694516277637, start_time = 1694516277635
+2 1 is eating
+get_time time = 1694516277637, start_time = 1694516277635
+2 4 is sleeping
+get_time time = 1694516277637, start_time = 1694516277635
+2 3 is sleeping
+get_time time = 1694516277637, start_time = 1694516277635
+2 1 is sleeping
+get_time time = 1694516277637, start_time = 1694516277635
+2 2 is thinking
+get_time time = 1694516277637, start_time = 1694516277635
+2 2 has taken a fork
+get_time time = 1694516277637, start_time = 1694516277635
+2 2 has taken a fork
+get_time time = 1694516277637, start_time = 1694516277635
+2 2 is eating
+get_time time = 1694516277637, start_time = 1694516277635
+2 4 has taken a fork
+get_time time = 1694516277637, start_time = 1694516277635
+2 4 has taken a fork
+get_time time = 1694516277637, start_time = 1694516277635
+2 4 is eating
+get_time time = 1694516277637, start_time = 1694516277635
+2 1 is thinking
+get_time time = 1694516277637, start_time = 1694516277635
+get_time time = 1694516277637, start_time = 1694516277635
+2 3 is thinking
+2 2 is sleeping
+get_time time = 1694516277637, start_time = 1694516277635
+2 3 has taken a fork
+get_time time = 1694516277637, start_time = 1694516277635
+2 4 is sleeping
+get_time time = 1694516277637, start_time = 1694516277635
+2 3 has taken a fork
+get_time time = 1694516277637, start_time = 1694516277635
+2 3 is eating
+get_time time = 1694516277637, start_time = 1694516277635
+2 1 has taken a fork
+get_time time = 1694516277637, start_time = 1694516277635
+2 1 has taken a fork
+get_time time = 1694516277637, start_time = 1694516277635
+2 1 is eating
+get_time time = 1694516277637, start_time = 1694516277635
+2 2 is thinking
+get_time time = 1694516277638, start_time = 1694516277635
+3 4 is thinking
+get_time time = 1694516277638, start_time = 1694516277635
+3 3 is sleeping
+get_time time = 1694516277638, start_time = 1694516277635
+3 4 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+3 1 is sleeping
+get_time time = 1694516277638, start_time = 1694516277635
+get_time time = 1694516277638, start_time = 1694516277635
+3 2 has taken a fork
+3 4 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+get_time time = 1694516277638, start_time = 1694516277635
+3 2 has taken a fork
+3 4 is eating
+get_time time = 1694516277638, start_time = 1694516277635
+3 2 is eating
+get_time time = 1694516277638, start_time = 1694516277635
+3 3 is thinking
+get_time time = 1694516277638, start_time = 1694516277635
+3 1 is thinking
+get_time time = 1694516277638, start_time = 1694516277635
+3 4 is sleeping
+get_time time = 1694516277638, start_time = 1694516277635
+3 1 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+get_time time = 1694516277638, start_time = 1694516277635
+3 1 has taken a fork
+3 2 is sleeping
+get_time time = 1694516277638, start_time = 1694516277635
+get_time time = 1694516277638, start_time = 1694516277635
+3 3 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+3 3 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+3 3 is eating
+3 1 is eating
+get_time time = 1694516277638, start_time = 1694516277635
+3 4 is thinking
+get_time time = 1694516277638, start_time = 1694516277635
+3 2 is thinking
+get_time time = 1694516277638, start_time = 1694516277635
+3 1 is sleeping
+get_time time = 1694516277638, start_time = 1694516277635
+3 2 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+get_time time = 1694516277638, start_time = 1694516277635
+3 3 is sleeping
+3 2 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+3 2 is eating
+get_time time = 1694516277638, start_time = 1694516277635
+3 4 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+3 4 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+3 4 is eating
+get_time time = 1694516277638, start_time = 1694516277635
+3 4 is sleeping
+get_time time = 1694516277638, start_time = 1694516277635
+3 3 is thinking
+get_time time = 1694516277638, start_time = 1694516277635
+3 2 is sleeping
+get_time time = 1694516277638, start_time = 1694516277635
+get_time time = 1694516277638, start_time = 1694516277635
+3 1 is thinking
+get_time time = 1694516277638, start_time = 1694516277635
+3 1 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+3 1 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+3 1 is eating
+3 3 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+3 3 has taken a fork
+get_time time = 1694516277638, start_time = 1694516277635
+3 3 is eating
+get_time time = 1694516277639, start_time = 1694516277635
+4 4 is thinking
+get_time time = 1694516277639, start_time = 1694516277635
+4 2 is thinking
+get_time time = 1694516277639, start_time = 1694516277635
+4 3 is sleeping
+get_time time = 1694516277639, start_time = 1694516277635
+4 4 has taken a fork
+get_time time = 1694516277639, start_time = 1694516277635
+get_time time = 1694516277639, start_time = 1694516277635
+4 2 has taken a fork
+get_time time = 1694516277639, start_time = 1694516277635
+4 4 has taken a fork
+4 1 is sleeping
+get_time time = 1694516277639, start_time = 1694516277635
+get_time time = 1694516277639, start_time = 1694516277635
+4 2 has taken a fork
+get_time time = 1694516277639, start_time = 1694516277635
+4 2 is eating
+4 4 is eating
+get_time time = 1694516277639, start_time = 1694516277635
+4 3 is thinking
+get_time time = 1694516277639, start_time = 1694516277635
+4 1 is thinking
+get_time time = 1694516277639, start_time = 1694516277635
+4 4 is sleeping
+get_time time = 1694516277639, start_time = 1694516277635
+4 1 has taken a fork
+get_time time = 1694516277639, start_time = 1694516277635
+4 1 has taken a fork
+get_time time = 1694516277639, start_time = 1694516277635
+get_time time = 1694516277639, start_time = 1694516277635
+4 2 is sleeping
+4 1 is eating
+get_time time = 1694516277639, start_time = 1694516277635
+4 3 has taken a fork
+get_time time = 1694516277639, start_time = 1694516277635
+4 3 has taken a fork
+get_time time = 1694516277639, start_time = 1694516277635
+4 3 is eating
+get_time time = 1694516277639, start_time = 1694516277635
+4 2 is thinking
+get_time time = 1694516277639, start_time = 1694516277635
+4 2 has taken a fork
+get_time time = 1694516277639, start_time = 1694516277635
+4 1 is sleeping
+get_time time = 1694516277639, start_time = 1694516277635
+4 4 is thinking
+get_time time = 1694516277639, start_time = 1694516277635
+get_time time = 1694516277639, start_time = 1694516277635
+4 4 has taken a fork
+4 3 is sleeping
+get_time time = 1694516277639, start_time = 1694516277635
+4 2 has taken a fork
+get_time time = 1694516277639, start_time = 1694516277635
+4 4 has taken a fork
+get_time time = 1694516277639, start_time = 1694516277635
+4 4 is eating
+get_time time = 1694516277639, start_time = 1694516277635
+4 2 is eating
+get_time time = 1694516277640, start_time = 1694516277635
+5 1 is thinking
+get_time time = 1694516277640, start_time = 1694516277635
+5 4 is sleeping
+get_time time = 1694516277640, start_time = 1694516277635
+5 3 is thinking
+get_time time = 1694516277640, start_time = 1694516277635
+5 2 is sleeping
+get_time time = 1694516277640, start_time = 1694516277635
+5 3 has taken a fork
+get_time time = 1694516277640, start_time = 1694516277635
+5 3 has taken a fork
+get_time time = 1694516277640, start_time = 1694516277635
+5 3 is eating
+get_time time = 1694516277640, start_time = 1694516277635
+5 4 is thinking
+get_time time = 1694516277640, start_time = 1694516277635
+5 2 is thinking
+get_time time = 1694516277640, start_time = 1694516277635
+get_time time = 1694516277640, start_time = 1694516277635
+5 3 is sleeping
+5 2 has taken a fork
+get_time time = 1694516277640, start_time = 1694516277635
+5 2 has taken a fork
+get_time time = 1694516277640, start_time = 1694516277635
+5 4 has taken a fork
+get_time time = 1694516277640, start_time = 1694516277635
+5 4 has taken a fork
+get_time time = 1694516277640, start_time = 1694516277635
+5 4 is eating
+get_time time = 1694516277640, start_time = 1694516277635
+5 2 is eating
+get_time time = 1694516277640, start_time = 1694516277635
+5 3 is thinking
+get_time time = 1694516277640, start_time = 1694516277635
+5 4 is sleeping
+get_time time = 1694516277640, start_time = 1694516277635
+5 2 is sleeping
+get_time time = 1694516277640, start_time = 1694516277635
+5 3 has taken a fork
+get_time time = 1694516277640, start_time = 1694516277635
+5 3 has taken a fork
+get_time time = 1694516277640, start_time = 1694516277635
+5 3 is eating
+get_time time = 1694516277640, start_time = 1694516277635
+5 4 is thinking
+get_time time = 1694516277640, start_time = 1694516277635
+5 3 is sleeping
+get_time time = 1694516277640, start_time = 1694516277635
+5 4 has taken a fork
+get_time time = 1694516277640, start_time = 1694516277635
+5 4 has taken a fork
+get_time time = 1694516277640, start_time = 1694516277635
+5 4 is eating
+get_time time = 1694516277640, start_time = 1694516277635
+5 2 is thinking
+get_time time = 1694516277641, start_time = 1694516277635
+6 4 is sleeping
+get_time time = 1694516277641, start_time = 1694516277635
+6 3 is thinking
+get_time time = 1694516277641, start_time = 1694516277635
+6 4 is thinking

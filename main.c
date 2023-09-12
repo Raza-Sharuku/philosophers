@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/12 15:15:32 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 20:38:53 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	main(int argc, char **argv)
 		philo = philo->next;
 		i++;
 	}
-	
 	// free_circle_list(info, philo);
 	return (0);
 }

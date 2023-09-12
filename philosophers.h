@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:12:01 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/12 14:04:58 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 19:45:17 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ void						*free_circle_list(t_info *info, t_philo *philo);
 t_philo						*creating_threads(t_philo *philo);
 void						print_condition(t_philo *philo,
 								t_philo_condition cond);
+int							philosophers_dead(t_philo *philo);
 
 #endif

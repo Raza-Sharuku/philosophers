@@ -3,27 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   create_threads.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:43:02 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/12 16:01:54 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 19:47:58 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"philosophers.h"
 
-void	monitering_routine(void *p)
-{
-	t_info	*moniter;
+// void	*monitering_routine(void *p)
+// {
+// 	t_info	*moniter;
 
-	moniter = (t_info *)p;
-	while (moniter->stop_flag == 0)
-	{
-		if (philosophers_dead(moniter->philo))
+// 	moniter = (t_info *)p;
+// 	while (moniter->stop_flag == 0)
+// 	{
+// 		if (philosophers_dead(moniter->philo))
 			
-	}
-	return;
-}
+			
+// 	}
+// 	return;
+// }
 
 t_philo	*creating_threads(t_philo *philo)
 {
@@ -38,6 +39,6 @@ t_philo	*creating_threads(t_philo *philo)
 		tmp = tmp->next;
 		i++;
 	}
-	pthread_create(&tmp->info->moniter, NULL, &monitering_routine, tmp->info);
+	// pthread_create(&tmp->info->moniter, NULL, &monitering_routine, &tmp->info);
 	return (philo);
 }
