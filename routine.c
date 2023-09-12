@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 20:21:12 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/06 14:58:17 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 13:57:59 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	eating(t_philo *philo)
 	print_condition(philo, TAKE_FORK);
 	print_condition(philo, EATING);
 	usleep(philo->info->time_to_eat);
+	philo->eat_count++;
+	philo->last_time_of_eat = get_now_time();
 	pthread_mutex_unlock(&philo->my_fork);
 	pthread_mutex_unlock(philo->side_fork);
 	return (0);
@@ -27,10 +29,7 @@ int	eating(t_philo *philo)
 
 int	thinking(t_philo *philo)
 {
-	// long long	now;
-
 	print_condition(philo, THINKING);
-	
 	return (0);
 }
 
@@ -57,18 +56,15 @@ void	*routine(void *p)
 	t_philo *philo;
 
 	philo = (t_philo *)p;
+	if (philo->id % 2 == 0)
+		sleeping(philo);
 	while (philo->info->stop_flag == 0)
 	{
-		if (philo->id % 2 == 0)
-		{
-			eating(philo);
-			sleeping(philo);
-		}
-		if (philo->id % 2 == 1)
-		{
-			sleeping(philo);
-			eating(philo);
-		}
+		eating(philo);
+		sleeping(philo);
+		thinking(philo);
+		if (philo->eat_count > philo->info->least_time_to_eat)
+			break ;
 		philosophers_dead(philo);
 	}
 	return (NULL);

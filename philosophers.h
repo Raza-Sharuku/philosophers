@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:12:01 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/06 13:50:10 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 10:17:21 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <stdio.h>
 # include <pthread.h>
 # include <stdatomic.h>
-# define NUM_THREADS 10
 
 typedef struct s_timeval
 {

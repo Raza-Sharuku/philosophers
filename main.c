@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/06 11:28:55 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 09:59:23 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,3 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-// TIMEVAL_TO_TIMESPEC(tv, ts)
-// {
-// 	(ts)->tv_sec = (tv)->tv_sec;
-// 	(ts)->tv_nsec = (tv)->tv_usec * 1000; \
-// }
