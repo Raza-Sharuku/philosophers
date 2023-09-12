@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:12:01 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/12 10:17:21 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 14:04:58 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct s_philo
 
 }				t_philo;
 
-typedef enum e_philo_condition 
+typedef enum e_philo_condition
 {
 	TAKE_FORK,
 	EATING,
@@ -73,6 +73,7 @@ void						get_side_fork(t_info *info);
 void						*routine(void *p);
 void						*free_circle_list(t_info *info, t_philo *philo);
 t_philo						*creating_threads(t_philo *philo);
-void						print_condition(t_philo *philo, t_philo_condition cond);
+void						print_condition(t_philo *philo,
+								t_philo_condition cond);
 
 #endif

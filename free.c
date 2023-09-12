@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:27:21 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/05 17:16:22 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/12 14:05:48 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*free_circle_list(t_info *info, t_philo *philo)
 {
-	t_philo *first;
-	t_philo *tmp;
+	t_philo	*first;
+	t_philo	*tmp;
 
 	first = philo;
 	philo = philo->prev;
@@ -28,5 +28,5 @@ void	*free_circle_list(t_info *info, t_philo *philo)
 	}
 	free(first);
 	(void)(info);
-	return NULL;
+	return (NULL);
 }

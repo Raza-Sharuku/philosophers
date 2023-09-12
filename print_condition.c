@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:40:11 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/12 11:29:02 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 14:03:24 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_condition(t_philo *philo, t_philo_condition cond)
 {
-	long ms;
+	long	ms;
 
 	ms = get_time(philo->info->start_time);
 	if (philo->info->stop_flag && cond != DIE)

@@ -6,13 +6,13 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 15:30:17 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/06 11:31:15 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 14:08:10 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"philosophers.h"
 
-t_philo *ft_newphilo(int num, t_info *info)
+t_philo	*ft_newphilo(int num, t_info *info)
 {
 	t_philo	*new;
 
@@ -30,8 +30,8 @@ t_philo *ft_newphilo(int num, t_info *info)
 
 t_philo	*print_philo(t_philo *philo)
 {
-	t_philo *first;
-	int i;
+	t_philo	*first;
+	int		i;
 
 	first = philo;
 	i = 0;
@@ -55,10 +55,10 @@ t_philo	*print_philo(t_philo *philo)
 
 t_philo	*make_philo(t_info *info)
 {
-	int	i;
-	t_philo *first;
-	t_philo *new;
-	t_philo *tmp;
+	int		i;
+	t_philo	*first;
+	t_philo	*new;
+	t_philo	*tmp;
 
 	first = ft_newphilo(1, info);
 	tmp = first;
@@ -78,6 +78,5 @@ t_philo	*make_philo(t_info *info)
 	first->prev = new;
 	info->philo = first;
 	get_side_fork(info);
-	// first = print_philo(first);
 	return (first);
 }

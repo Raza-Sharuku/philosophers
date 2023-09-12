@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 20:21:12 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/12 13:57:59 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 14:07:25 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	sleeping(t_philo *philo)
 
 int	philosophers_dead(t_philo *philo)
 {
-	if (philo->info->start_time - philo->last_time_of_eat >= philo->info->time_to_die)
+	if (philo->info->start_time - philo->last_time_of_eat
+		>= philo->info->time_to_die)
 	{
 		printf("%ld %i is dead\n", get_time(philo->info->start_time), philo->id);
 		philo->info->stop_flag = 1;
@@ -53,7 +54,7 @@ int	philosophers_dead(t_philo *philo)
 
 void	*routine(void *p)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = (t_philo *)p;
 	if (philo->id % 2 == 0)
