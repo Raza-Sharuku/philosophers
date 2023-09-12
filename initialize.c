@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 19:59:18 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/12 14:04:06 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 14:20:58 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ long	get_now_time(void)
 	return ((time.tv_sec * 1000 + time.tv_usec / 1000));
 }
 
+int	check_each_value(t_info *info)
+{
+	if (info->time_to_die == 0)
+		return (1);
+	return (0);
+}
+
 t_info	*set_philo_value(char **argv)
 {
 	t_info	*info;
@@ -45,6 +52,8 @@ t_info	*set_philo_value(char **argv)
 		info->least_time_to_eat = INT_MAX;
 	info->start_time = get_now_time();
 	info->stop_flag = 0;
+	if (check_each_value(info))
+		return (NULL);
 	return (info);
 }
 

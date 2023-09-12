@@ -6,13 +6,14 @@
 #    By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/26 20:33:01 by sraza             #+#    #+#              #
-#    Updated: 2023/09/06 14:23:24 by razasharuku      ###   ########.fr        #
+#    Updated: 2023/09/12 14:36:12 by razasharuku      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	philo
 CC = cc
-CFLAGS	=	-pthread -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS	=	-pthread -Wall -Wextra -Werror -fsanitize=thread -g
+# -g -fsanitize=address
 
 SRCS	=	main.c \
 			ft_atoi.c \

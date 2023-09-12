@@ -6,18 +6,24 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:43:02 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/06 11:29:04 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 16:01:54 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"philosophers.h"
 
-// void	monitering_routine(void *p)
-// {
-// 	p = NULL;
+void	monitering_routine(void *p)
+{
+	t_info	*moniter;
 
-// 	return;
-// }
+	moniter = (t_info *)p;
+	while (moniter->stop_flag == 0)
+	{
+		if (philosophers_dead(moniter->philo))
+			
+	}
+	return;
+}
 
 t_philo	*creating_threads(t_philo *philo)
 {
@@ -32,6 +38,6 @@ t_philo	*creating_threads(t_philo *philo)
 		tmp = tmp->next;
 		i++;
 	}
-	// pthread_create(&info->moniter, NULL, &monitering_routine, info);
+	pthread_create(&tmp->info->moniter, NULL, &monitering_routine, tmp->info);
 	return (philo);
 }

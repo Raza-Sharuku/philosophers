@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/12 14:05:24 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 15:15:32 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main(int argc, char **argv)
 		philo = philo->next;
 		i++;
 	}
+	
 	// free_circle_list(info, philo);
 	return (0);
 }

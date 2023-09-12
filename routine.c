@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 20:21:12 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/12 14:07:25 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/12 16:01:51 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	*routine(void *p)
 		thinking(philo);
 		if (philo->eat_count > philo->info->least_time_to_eat)
 			break ;
-		philosophers_dead(philo);
+		// philosophers_dead(philo);
 	}
 	return (NULL);
 }
