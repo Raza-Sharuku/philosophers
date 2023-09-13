@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 20:21:12 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/13 13:15:02 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/13 21:00:46 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,10 @@ int	philosophers_dead(t_philo *philo)
 	if (philo->last_time_of_eat - philo->info->start_time
 		>= philo->info->time_to_die)
 	{
-		print_condition(philo, DIE);
+		pthread_mutex_lock(&(philo->info->data));
 		philo->info->stop_flag = 1;
+		print_condition(philo, DIE);
+		pthread_mutex_unlock(&(philo->info->data));
 		return (1);
 	}
 	return (0);
@@ -75,13 +77,15 @@ void	*routine(void *p)
 		sleeping(philo);
 	while (philo->info->stop_flag == 0)
 	{
+		pthread_mutex_lock(&(philo->info->data));
 		eating(philo);
 		if (philo->eat_count > philo->info->least_time_to_eat)
 			break ;
-		if (philo->info->stop_flag == 1)
-			break ;
+		// if (philo->info->stop_flag == 1)
+		// 	break ;
 		sleeping(philo);
 		thinking(philo);
+		pthread_mutex_unlock(&(philo->info->data));
 		// philosophers_dead(philo);
 	}
 	return (NULL);

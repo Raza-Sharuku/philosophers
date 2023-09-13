@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:12:01 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/12 19:45:17 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/13 20:43:33 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_info
 	int				time_to_sleep;
 	int				least_time_to_eat;
 	time_t			start_time;
+	pthread_mutex_t	data;
 	atomic_int		stop_flag;
 	pthread_t		moniter;
 	struct s_philo	*philo;
@@ -76,5 +77,7 @@ t_philo						*creating_threads(t_philo *philo);
 void						print_condition(t_philo *philo,
 								t_philo_condition cond);
 int							philosophers_dead(t_philo *philo);
+int							ft_isalpha(char *str);
+void						*monitering_routine(void *p);
 
 #endif

@@ -3,20 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+         #
+#    By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/26 20:33:01 by sraza             #+#    #+#              #
-#    Updated: 2023/09/12 14:36:12 by razasharuku      ###   ########.fr        #
+#    Updated: 2023/09/13 20:04:26 by sraza            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	philo
 CC = cc
-CFLAGS	=	-pthread -Wall -Wextra -Werror -fsanitize=thread -g
+CFLAGS	=	-pthread -Wall -Wextra -Werror -g -fsanitize=thread 
 # -g -fsanitize=address
 
 SRCS	=	main.c \
 			ft_atoi.c \
+			ft_isalpha.c \
 			make_philo_list.c \
 			initialize.c \
 			create_threads.c \
@@ -24,6 +25,7 @@ SRCS	=	main.c \
 			free.c \
 			routine.c \
 			print_condition.c \
+			mutex_destory.c \
 
 OBJS = ${SRCS:%.c=%.o}
 
