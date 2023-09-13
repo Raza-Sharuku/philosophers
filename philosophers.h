@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:12:01 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/13 20:43:33 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/13 22:29:48 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_info
 	int				least_time_to_eat;
 	time_t			start_time;
 	pthread_mutex_t	data;
+	pthread_mutex_t	print;
 	atomic_int		stop_flag;
 	pthread_t		moniter;
 	struct s_philo	*philo;
@@ -53,7 +54,6 @@ typedef struct s_philo
 	atomic_long		last_time_of_eat;
 	struct s_philo	*next;
 	struct s_philo	*prev;
-
 }				t_philo;
 
 typedef enum e_philo_condition
@@ -75,7 +75,7 @@ void						*routine(void *p);
 void						*free_circle_list(t_info *info, t_philo *philo);
 t_philo						*creating_threads(t_philo *philo);
 void						print_condition(t_philo *philo,
-								t_philo_condition cond);
+								t_philo_condition cond, long ms);
 int							philosophers_dead(t_philo *philo);
 int							ft_isalpha(char *str);
 void						*monitering_routine(void *p);

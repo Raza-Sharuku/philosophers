@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 19:59:18 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/13 20:45:31 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/13 22:16:47 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ t_info	*set_philo_value(char **argv)
 	info->start_time = get_now_time();
 	info->stop_flag = 0;
 	pthread_mutex_init(&(info->data), NULL);
+	pthread_mutex_init(&(info->print), NULL);
 	if (check_each_value(info))
 		return (NULL);
 	return (info);

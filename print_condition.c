@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   print_condition.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:40:11 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/13 21:47:58 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/13 22:48:50 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"philosophers.h"
 
-void	print_condition(t_philo *philo, t_philo_condition cond)
+void	print_condition(t_philo *philo, t_philo_condition cond, long ms)
 {
-	long	ms;
-
-	ms = get_time(philo->info->start_time);
+	pthread_mutex_lock(&(philo->info->print));
 	if (philo->info->stop_flag && cond != DIE)
 	{
 		pthread_mutex_unlock(&philo->my_fork);
@@ -32,5 +30,6 @@ void	print_condition(t_philo *philo, t_philo_condition cond)
 		printf("%ld %d is thinking\n", ms, philo->id);
 	else if (cond == DIE)
 		printf("%ld %d is died\n", ms, philo->id);
+	pthread_mutex_unlock(&(philo->info->print));
 	return ;
 }
