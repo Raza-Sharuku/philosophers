@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_threads.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:43:02 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/13 20:57:47 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/13 21:57:30 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ t_philo	*creating_threads(t_philo *philo)
 		i++;
 	}
 	tmp = philo;
-	pthread_create(&tmp->info->moniter, NULL, &monitering_routine, &tmp);
+	pthread_create(&tmp->info->moniter, NULL, &monitering_routine, tmp);
 	return (philo);
 }

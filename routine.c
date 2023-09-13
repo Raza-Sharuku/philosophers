@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 20:21:12 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/13 21:00:46 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/13 21:48:59 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	eating(t_philo *philo)
 {
 	long	ms_start;
 
+	if (philo->info->stop_flag)
+		return (1);
 	pthread_mutex_lock(&philo->my_fork);
 	print_condition(philo, TAKE_FORK);
 	pthread_mutex_lock(philo->side_fork);
@@ -36,6 +38,8 @@ int	eating(t_philo *philo)
 
 int	thinking(t_philo *philo)
 {
+	if (philo->info->stop_flag)
+		return (1);
 	print_condition(philo, THINKING);
 	return (0);
 }
@@ -44,6 +48,8 @@ int	sleeping(t_philo *philo)
 {
 	long	ms_start;
 
+	if (philo->info->stop_flag)
+		return (1);
 	print_condition(philo, SLEEPING);
 	ms_start = get_now_time();
 	while (1)
@@ -51,7 +57,7 @@ int	sleeping(t_philo *philo)
 		if (get_now_time() - ms_start > philo->info->time_to_sleep)
 			break ;
 	}
-	return (1);
+	return (0);
 }
 
 int	philosophers_dead(t_philo *philo)
@@ -75,18 +81,16 @@ void	*routine(void *p)
 	philo = (t_philo *)p;
 	if (philo->id % 2 == 0)
 		sleeping(philo);
-	while (philo->info->stop_flag == 0)
+	while (1)
 	{
-		pthread_mutex_lock(&(philo->info->data));
-		eating(philo);
+		if (eating(philo))
+			break ;
 		if (philo->eat_count > philo->info->least_time_to_eat)
 			break ;
-		// if (philo->info->stop_flag == 1)
-		// 	break ;
-		sleeping(philo);
-		thinking(philo);
-		pthread_mutex_unlock(&(philo->info->data));
-		// philosophers_dead(philo);
+		if (sleeping(philo))
+			break ;
+		if (thinking(philo))
+			break ;
 	}
 	return (NULL);
 }
