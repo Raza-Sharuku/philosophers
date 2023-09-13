@@ -1,45 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_threads.c                                   :+:      :+:    :+:   */
+/*   mutex_destory.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 15:43:02 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/13 13:15:13 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/09/13 11:03:52 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/09/13 11:27:00 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"philosophers.h"
 
-void	*monitering_routine(void *p)
+static int	destroy_mutex_forks(t_philo *philo)
 {
-	t_philo	*moniter;
-
-	moniter = (t_philo *)p;
-	while (moniter->info->stop_flag == 0)
-	{
-		if (philosophers_dead(moniter))
-			break ;
-		moniter = moniter->next;
-	}
-	return (NULL);
-}
-
-t_philo	*creating_threads(t_philo *philo)
-{
-	int		i;
+	int	i;
 	t_philo	*tmp;
 
-	i = 0;
 	tmp = philo;
+	i = 0;
 	while (i < philo->info->num_philo)
 	{
-		pthread_create(&tmp->thread, NULL, &routine, tmp);
+		pthread_mutex_destroy(&tmp->my_fork);
 		tmp = tmp->next;
 		i++;
 	}
-	tmp = philo;
-	pthread_create(&tmp->info->moniter, NULL, &monitering_routine, &tmp);
-	return (philo);
+	return (0);
 }
+

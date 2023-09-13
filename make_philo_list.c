@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 15:30:17 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/12 14:08:10 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/13 13:14:00 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_philo	*make_philo(t_info *info)
 	first = ft_newphilo(1, info);
 	tmp = first;
 	i = 2;
-	while (i < info->num_philo)
+	while (i <= info->num_philo)
 	{
 		new = ft_newphilo(i, info);
 		tmp->next = new;
@@ -71,10 +71,11 @@ t_philo	*make_philo(t_info *info)
 		tmp = tmp->next;
 		i++;
 	}
-	new = ft_newphilo(i, info);
-	tmp->next = new;
-	new->prev = tmp;
-	tmp->next->next = first;
+	// new = ft_newphilo(i, info);
+	// tmp->next = new;
+	// new->prev = tmp;
+	// tmp->next->next = first;
+	tmp->next = first;
 	first->prev = new;
 	info->philo = first;
 	get_side_fork(info);

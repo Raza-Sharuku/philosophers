@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 20:21:12 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/12 20:19:18 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/13 13:15:02 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ int	sleeping(t_philo *philo)
 
 int	philosophers_dead(t_philo *philo)
 {
-	if (philo->info->start_time - philo->last_time_of_eat
+	if (philo->last_time_of_eat - philo->info->start_time
 		>= philo->info->time_to_die)
 	{
-		printf("%ld %i is dead\n", get_time(philo->info->start_time), philo->id);
+		print_condition(philo, DIE);
 		philo->info->stop_flag = 1;
 		return (1);
 	}
@@ -76,11 +76,13 @@ void	*routine(void *p)
 	while (philo->info->stop_flag == 0)
 	{
 		eating(philo);
-		sleeping(philo);
-		thinking(philo);
 		if (philo->eat_count > philo->info->least_time_to_eat)
 			break ;
-		philosophers_dead(philo);
+		if (philo->info->stop_flag == 1)
+			break ;
+		sleeping(philo);
+		thinking(philo);
+		// philosophers_dead(philo);
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:40:11 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/12 14:03:24 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/09/13 10:57:25 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ void	print_condition(t_philo *philo, t_philo_condition cond)
 	else if (cond == THINKING)
 		printf("%ld %d is thinking\n", ms, philo->id);
 	else if (cond == DIE)
-		printf("%ld %d died\n", ms, philo->id);
+		printf("%ld %d is died\n", ms, philo->id);
 	return ;
 }
