@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:40:11 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/13 22:48:50 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/14 20:40:26 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	print_condition(t_philo *philo, t_philo_condition cond, long ms)
 {
 	pthread_mutex_lock(&(philo->info->print));
-	if (philo->info->stop_flag && cond != DIE)
+	if (can_mutex(philo) != 0 && cond != DIE)
 	{
-		pthread_mutex_unlock(&philo->my_fork);
+		pthread_mutex_unlock(&philo->info->print);
 		return ;
 	}
 	if (cond == TAKE_FORK)

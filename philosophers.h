@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:12:01 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/09/13 22:29:48 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/14 22:07:01 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void						print_condition(t_philo *philo,
 int							philosophers_dead(t_philo *philo);
 int							ft_isalpha(char *str);
 void						*monitering_routine(void *p);
+int							can_mutex(t_philo *philo);
+int							destroy_mutex_forks(t_philo *philo);
 
 #endif
