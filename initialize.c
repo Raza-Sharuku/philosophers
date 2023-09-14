@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 19:59:18 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/14 20:48:07 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/14 22:11:28 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ long	get_now_time(void)
 
 int	check_each_value(t_info *info)
 {
+	if (info->time_to_die == 0)
+		return (1);
 	if (info->time_to_die == 0)
 		return (1);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:21:52 by sraza             #+#    #+#             */
-/*   Updated: 2023/09/14 22:08:42 by sraza            ###   ########.fr       */
+/*   Updated: 2023/09/14 22:12:45 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	argc_error(int argc, char **argv)
 		Time_to_sleep [ Number_of_times_each_philosopher_must_eat ] \n");
 		return (1);
 	}
-	if (ft_atoi(argv[1]) < 0 || ft_atoi(argv[2]) < 0 || ft_atoi(argv[3]) < 0
-		|| ft_atoi(argv[4]) < 0)
+	if (ft_atoi(argv[1]) <= 0 || ft_atoi(argv[2]) <= 0 || ft_atoi(argv[3]) <= 0
+		|| ft_atoi(argv[4]) <= 0)
 		d = printf("MINUS NUMBER; WRITE POSITIVE NUMBER WITHOUT +\n");
 	if (argc == 6 && (ft_atoi(argv[5]) < 0))
 		d = printf("MINUS NUMBER; WRITE POSITIVE NUMBER WITHOUT +\n");
